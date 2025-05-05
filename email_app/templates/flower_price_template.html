@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <title>Flower Price</title>
+    <style>
+        body { width: 1000px; height: 1000px; font-family: Arial, sans-serif; text-align: center; background: white; }
+        .header { font-size: 20px; font-weight: bold; margin-bottom: 20px; }
+        .date { font-size: 16px; text-align: right; margin-bottom: 20px; }
+        .table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .table th, .table td { border: 1px solid black; padding: 10px; text-align: center; }
+        .footer { margin-top: 30px; font-weight: bold; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="header">சத்தி மலர் சாகுபடி விவசாயிகள் தலைமை சங்கம்</div>
+    <div class="header">சத்தியமங்கலம்</div>
+    <div class="date">{{ currentDate }}</div>
+    <div class="header">இன்றைய பூக்கள் விலை நிலவரம்</div>
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>படி (ஒன்றுக்கு)</th>
+            <th>கிலோ (ஒன்றுக்கு)</th>
+        </tr>
+        {% for flower in flowerTypeValue %}
+        <tr>
+            <td>{{ flower.flower_name }}</td>
+            <td>{{ flower.padi_low_value }} / {{ flower.padi_high_value }}</td>
+            <td>{{ flower.kilo_low_value }} / {{ flower.kilo_high_value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="footer">உழவன் உழைத்தால் உலகம் வாழும் !!!</div>
+</body>
+</html>

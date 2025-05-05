@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SMSVTS Daily Report" />
+    <title>Daily Report - SMSVTS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 600px;
+            margin: 40px 0 40px 20px; 
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            font-size: 0.9em;
+            color: #999999;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .footer a {
+            color: #006127;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <p>Hi {{nick}},</p>
+        <p><strong>Date:</strong> {{ date }}</p>
+        
+        <h3>Flower Quantities</h3>
+        <ul>
+            {% for flower_name, quantity in flowers.items %}
+                <li><strong>{{ flower_name }}:</strong> {{ quantity }}</li>
+            {% endfor %}
+        </ul>
+        
+
+        <h3>Accounts</h3>
+        <ul>
+            <li><strong>Total Purchase:</strong> {{ total_purchase }}</li>
+            <li><strong>Farmer Advance:</strong> {{ farmer_advance }}</li>
+            <li><strong>Farmer Full Payment:</strong> {{ farmer_full_payment }}</li>
+            <li><strong>Trader Advance:</strong> {{ trader_advance }}</li>
+            <li><strong>Trader Full Payment:</strong> {{ trader_full_payment }}</li>
+            <li><strong>Toll:</strong> {{ toll }}</li>
+            <li><strong>Income:</strong> {{ income }}</li>
+            <li><strong>Expense:</strong> {{ expense }}</li>
+            <li><strong>Closing Balance:</strong> {{ closing_balance }}</li>
+        </ul>
+
+        <p>Thanks,<br><strong>SMSVTS IT Team</strong></p>
+
+        <div class="footer">
+            <p>&copy; 2025 SMSVTS. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
